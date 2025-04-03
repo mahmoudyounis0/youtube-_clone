@@ -42,6 +42,7 @@ export const youtubeApi = {
           key: "AIzaSyBhAd6q0emR_8H-dnNDQQkttAgObOt0zfg",
         },
       });
+  console.log(response.data);
   
       return {
         items: response.data.items || [],
@@ -73,7 +74,8 @@ export const youtubeApi = {
           key: 'AIzaSyBhAd6q0emR_8H-dnNDQQkttAgObOt0zfg',
         },
       })
-
+      console.log(response.data);
+      
       return response.data.items?.[0] || null
     } catch (error) {
       console.error("Error fetching video details:", error)

@@ -6,6 +6,7 @@ import { SidToggle } from "../Sidbar"
 import { searchIcon, searchIconsmall } from "@/constant/icons"
 import { useEffect, useState } from "react"
 import { youtubeApi } from "@/lib/api/youtube"
+import Link from "next/link"
 
 const Nav = () => {
   const [searchResultAutoComplete, setSearchResultAutoComplete] = useState([])
@@ -51,18 +52,18 @@ const Nav = () => {
   }, [show])
 
   return (
-    <div className="flex items-center justify-between px-2 py-4 bg-[#fff] dark:bg-[#0A0A0A] z-60 sticky top-0 ">
+    <div className="flex items-center justify-between px-2 py-2 bg-[#fff] dark:bg-[#0A0A0A] z-60 sticky top-0 ">
       <div className="head flex items-center ">
         <SidToggle />
-        <div className="logo h-8 w-8 flex items-center">
+        <Link href={'/'} className="logo h-8 w-8 flex items-center">
           <Image src={logo || "/placeholder.svg"} alt="Logo" className="w-full h-full" width={100} height={100} />
           <span className="tracking-tighter text-[20px]">YouTube</span>
-        </div>
+        </Link>
       </div>
       <div className="search flex items-center relative">
         <input
           id="search"
-          className="px-3 w-0 sm:w-0 md:w-[15rem] lg:w-[30rem] rounded-l-3xl border dark:bg-[#2e2d2d] py-2 focus:outline-[#3548f8]"
+          className="px-3 w-0 sm:w-0 md:w-[15rem] lg:w-[30rem] rounded-l-3xl border dark:bg-[#0A0A0A] py-2 focus:outline-[#3548f8]"
           placeholder="Search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}

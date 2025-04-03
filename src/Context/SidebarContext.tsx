@@ -8,7 +8,9 @@ export function Sidebarprovider({ children }: { children: ReactNode }) {
     const [open, setOpen] = useState(false)
 
     const toggleSidebar = () => {
-        setOpen(!open)
+        setTimeout(() => {
+            setOpen(!open)
+        }, 100);
         console.log("Sidebar toggled");
         
     }
