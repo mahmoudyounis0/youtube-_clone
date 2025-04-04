@@ -26,7 +26,7 @@ export default function RootLayout({
           <Sidebarprovider>
             <div className="flex flex-col min-h-screen">
               <Nav />
-              <div className="flex w-full flex-1 relative">
+              <div className="flex w-full flex-1 ">
                 <SideBar />
                 <div className="flex-1">{children}</div>
               </div>

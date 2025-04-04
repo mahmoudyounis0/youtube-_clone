@@ -53,4 +53,12 @@ export interface YouTubeThumbnail {
     }
   }
   
-  
+  export interface YouTubeApiError {
+    response?: {
+      data?: {
+        error?: {
+          message?: string
+        }
+      }
+    }
+  }

@@ -7,13 +7,14 @@ import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import profileImg from "@/app/assets/profile.jpg"
 import Image from "next/image"
+import { formatViewCount } from "../../utils/format-numbers"
 
 export default function WatchPageClient() {
   const params = useSearchParams()
   const vidId = params.get("v")
   const [video, setVideo] = useState<YouTubeVideo | null>(null)
   const [loading, setloading] = useState(false)
-
+const viewCount = formatViewCount(video?.statistics?.viewCount)
   useEffect(() => {
     const getVidDetails = async () => {
       setloading(true)
@@ -101,7 +102,7 @@ export default function WatchPageClient() {
             <>
               <span className="mx-2">•</span>
               <p className="text-sm text-[#837f7f]">
-                {Number.parseInt(video?.statistics.viewCount).toLocaleString()} views
+              <span>{viewCount}</span>
               </p>
             </>
           )}
